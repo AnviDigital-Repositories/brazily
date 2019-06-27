@@ -272,10 +272,53 @@ $(document).ready(function () {
     $(".basket-sing-reset").click(function () {
         $(".basket-second").show();
         $(".basket-first").hide();
-
     });
 
+    //Store - preloader in heart
     $(".store-hover-heart").click(function () {
         $(this).find(".sk-circle-bounce").addClass('active');
+
     });
+
+    //Blog - header btn and menu
+    $(".blog-btn-menu").click(function () {
+        $(this).toggleClass('btn-active');
+        $(this).parents().find(".blog-header-container").slideDown(500);
+
+        if (!$(this).hasClass('btn-active')) {
+            $(".blog-header-container").slideUp(500);
+
+        }
+    });
+
+    //Blog - drop menu
+    $(".blog-menu-link").click(function () {
+        $(this).parent().find(".blog-drop").slideToggle(500);
+        $(this).find("svg").toggleClass('active').parents().siblings().removeClass('active');
+    });
+
+    $(".blog-accordion-title").click(function () {
+        $(this).parent().find(".accordion-drop").slideToggle(500);
+        $(this).find(".blog-accordion-two").toggleClass('active');
+    });
+
+    if (window.matchMedia("(min-width: 994px)").matches) {
+        var $cache = $('.blog-header-container');
+        //store the initial position of the element
+        var vTop = $cache.offset().top - parseFloat($cache.css('margin-top').replace(/auto/, 0));
+        $(window).scroll(function (event) {
+            // what the y position of the scroll is
+            var y = $(this).scrollTop();
+
+            // whether that's below the form
+            if (y >= vTop) {
+                // if so, ad the fixed class
+                $cache.addClass('stuck');
+            } else {
+                // otherwise remove it
+                $cache.removeClass('stuck');
+            }
+        });
+    }
+
 });

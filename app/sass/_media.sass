@@ -3,8 +3,9 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1440px)
-  //
+@media only screen and (max-width : 1439px)
+  .blog:before
+    width: 413px
 @media only screen and (max-width : 1200px)
   .header-right
     right: 2%
@@ -187,6 +188,48 @@
   .basket-sing-field, .rtl .basket-sing-field:last-child, .basket-sing-field:last-child, .basket-form-field, .rtl .basket-form-flex .basket-form-field, .basket-form-flex .basket-form-field
     width: 100%
     margin: 0
+  .blog-flex
+    display: block
+  .blog-btn-menu
+    display: block
+  .blog-header
+    max-width: 100%
+    padding: 0
+    background: none
+  .blog-header-container
+    background: #ffffff
+    margin: 7.6923% 7.6923% 0
+    padding: 7.6923% 7.6923%
+  .blog-header-mob
+    max-width: 100%
+    display: flex
+    justify-content: space-between
+    padding: 7.6923%
+    align-items: center
+    background-image: url(https://barzilaynet.co.il/blog/wp-content/uploads/2016/05/cropped-cropped-cropped-260-0102-website-bg-KIDS-ALL-1500x8441.jpg)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+  .blog:before
+    content: none
+  .blog-logo
+    margin: 0
+    padding: 0
+  .blog-header-container
+    display: none
+  .blog-menu-link, .blog-drop-link, .blog-header-link
+    color: #333
+    padding: 0.8em 0
+    svg path
+      fill: #333
+  .blog-header .blog-menu, .blog-header-search, .blog-header-content
+    margin-bottom: 11.11%
+  .blog-logo-img
+    margin: 0
+
 @media only screen and (max-width : 767px)
   .footer-fixed
     display: flex
@@ -314,6 +357,28 @@
     margin-top: 10px
   .shop
     padding: 101px 0 40px
+  .blog-text
+    font-size: 17px
+  .blog-accordion-title
+    padding: 10px 0
+    font-size: 14px
+  .blog-accordion-span
+    margin: 0 15px
+
+@media only screen and (max-width : 600px)
+  .blog-container article, .blog-header-container
+    margin: 0
+  .blog-container, .blog-first
+    padding: 0
+  .blog-header .blog-menu
+    border-top: none
+  .blog-header-container
+    padding-top: 0
+  .blog-parination-flex
+    .blog-parination-link
+      display: none
+      &.active
+        display: block
 @media only screen and (max-width : 480px)
   .home-second-title
     font-size: 21px
@@ -356,3 +421,12 @@
     text-align: center
     display: flex
     justify-content: center
+  .blog-logo-img
+    max-height: 80px
+  .blog-title
+    font-size: 21px
+    line-height: 1.5
+  .accordion-drop-link, .blog-text-link
+    font-size: 18px
+  .blog-title-one
+    font-size: 31px
