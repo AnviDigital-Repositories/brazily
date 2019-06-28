@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+     $(".popup-close, .overlay").click(function () {
+        $(".popup-flex, .overlay, .popup").removeClass('active');
+     });
+
     var $body = $(window.document.body);
     function bodyFreezeScroll() {
         var bodyWidth = $body.innerWidth();
@@ -48,12 +52,12 @@ $(document).ready(function () {
         ]
     });
 
-    $(".header-btn").click(function () {
-        $(".header-drop").slideDown(500);
-    });
-    $(".header-drop-btn").click(function () {
-        $(".header-drop").slideUp(500);
-    });
+    // $(".header-btn").click(function () {
+    //     $(".header-drop").slideDown(500);
+    // });
+    // $(".header-drop-btn").click(function () {
+    //     $(".header-drop").slideUp(500);
+    // });
 
         // if ($(".checkbox").is(':checked') === 'true') {
         //     $(".header-drop-text").css("background", "#000000");
@@ -108,12 +112,12 @@ $(document).ready(function () {
 
     //Store btn menu
     $(".header-second-btn_menu").click(function () {
-        $(".overlay").addClass('active');
+        $(".header-overlay").addClass('active');
         bodyFreezeScroll();
 
     });
     $(".header-second-close").click(function () {
-        $(".overlay").removeClass('active');
+        $(".header-overlay").removeClass('active');
         bodyUnfreezeScroll();
     });
 
@@ -179,7 +183,9 @@ $(document).ready(function () {
                 breakpoint: 767,
                 settings: {
                     variableWidth: false,
-                    centerMode: false
+                    centerMode: false,
+                    arrows: false,
+                    speed: 500
                 }
             }
         ]
@@ -302,6 +308,19 @@ $(document).ready(function () {
         $(this).find(".blog-accordion-two").toggleClass('active');
     });
 
+    $('.card-tabs-item').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        let index = $(this).index();
+        $('.card-drop-list').eq(index).show().siblings().hide();
+    });
+
+
+    $(".lauren-first-link").fancybox();
+
+    $('.lauren-first-zoom').on('click', function() {
+        $.fancybox.open( $('.lauren-first-link'));
+    });
+
     if (window.matchMedia("(min-width: 994px)").matches) {
         var $cache = $('.blog-header-container');
         //store the initial position of the element
@@ -320,5 +339,5 @@ $(document).ready(function () {
             }
         });
     }
-
+    
 });

@@ -3,12 +3,26 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
+@media only screen and (max-height : 530px)
+  .popup
+    display: block
 @media only screen and (max-width : 1439px)
   .blog:before
     width: 413px
+  .card-block
+    padding: 1rem
 @media only screen and (max-width : 1200px)
   .header-right
     right: 2%
+  .card-block
+    width: 100%
+  .card-zoom
+    left: 5%
+    top: 5%
+    width: 20px
+    height: 20px
+  .card-first
+    flex-direction: column-reverse
 @media only screen and (max-width : 1024px)
   .header-right
     right: 1%
@@ -49,6 +63,8 @@
   .home-second-item
     width: 100%
     margin: 0 0 4.78% 0
+  .rtl .home-second-item:nth-child(odd)
+    margin-left: 0
   .home-second-title
     font-size: 30px
   .home-second-flex
@@ -94,7 +110,7 @@
     display: none
   .header-logo-mob, .header-second-close, .header-second-btn_menu, .header-second-input
     display: block
-  .overlay
+  .header-overlay
     position: fixed
     left: 0
     top: 0
@@ -110,7 +126,7 @@
       pointer-events: auto
       .header-menu-second
         transform: translateX(0px)
-  .rtl .overlay
+  .rtl .header-overlay
     direction: rtl
   .header-menu-second .header-second-link, .header-second-btn
     padding: 15px 20px
@@ -181,6 +197,8 @@
       border: 2px solid #446084
   .basket-coupon
     display: block
+  .basket-coupon .basket-sing-input
+    text-align: center
   .basket-coupon-btn
     width: 100%
   .basket-sing-flex, .basket-form-flex
@@ -229,7 +247,16 @@
     margin-bottom: 11.11%
   .blog-logo-img
     margin: 0
-
+  .card
+    padding: 0 4.5%
+    margin: 30px 0 60px
+  .card-first
+    margin: 20px 0 2% 0
+    padding: 1.75%
+  .card-second
+    padding: 0 1.75% 1.75%
+  .place-articte
+    max-width: 100%
 @media only screen and (max-width : 767px)
   .footer-fixed
     display: flex
@@ -364,7 +391,19 @@
     font-size: 14px
   .blog-accordion-span
     margin: 0 15px
-
+  .card-block
+    padding: 1%
+  .card-gallery-main
+    margin-bottom: 10px
+  rtl .card-gallery-item
+    margin-right: 10px
+    margin-left: 0
+  .card-gallery-item
+    margin-left: 10px
+  .rtl .card-gallery-item:last-child
+    margin-right: 0
+  .rtl .card-gallery-item:first-child
+    margin-left: 10px
 @media only screen and (max-width : 600px)
   .blog-container article, .blog-header-container
     margin: 0
@@ -379,6 +418,8 @@
       display: none
       &.active
         display: block
+  .place-cell
+    width: 100%
 @media only screen and (max-width : 480px)
   .home-second-title
     font-size: 21px
@@ -430,3 +471,21 @@
     font-size: 18px
   .blog-title-one
     font-size: 31px
+  .card-text, .card-blue, .card-second-text
+    font-size: 16px
+  .card-title
+    padding: 20px 0
+  .card-first-flex
+    flex-direction: column
+  .card-tabs-item
+    font-size: 18px
+  .popup-flex
+    display: block
+  .popup
+    display: block
+  .popup-flex
+    margin: 20px
+  .popup-img
+    max-height: 115px
+  .popup-form
+    padding: 20px 10px
